@@ -1,1 +1,1 @@
-# census
+mongodb://census:census@ds129028.mlab.com:29028/censusproject
