@@ -1,0 +1,19 @@
+<div id="wrapper" ng-class="vm.toggle ? 'toggeled' : ' '">
+    
+    <sidebar></sidebar>
+    
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>{{vm.content}}</h1>
+                    <p>This application uses data from the United States Census Bureau and web servies to determine housing prices based on location and population.</p>
+                    
+                    <button type="button" class="btn btn-default btn-link" id="menu-toggle" ng-model="vm.toggle" ng-click="vm.toggle=!vm.toggle">Toggle Menu</button>
+                </div>
+            </div>
+            <br>
+            <footer-generic></footer-generic>
+        </div>
+    </div>
+</div>
