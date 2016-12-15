@@ -12,6 +12,26 @@
             controller: 'homeCtrl',
             controllerAs: 'vm'
           })
+          .when('/apartment/', {
+            templateUrl: '/apartment/apartment.view.html',
+            controller: 'apartmentCtrl',
+            controllerAs: 'vm'
+          })
+          .when('/duplex', {
+            templateUrl: '/duplex/duplex.view.html',
+            controller: 'duplexCtrl',
+            controllerAs: 'vm'
+          })
+          .when('/house/', {
+            templateUrl: '/house/house.view.html',
+            controller: 'houseCtrl',
+            controllerAs: 'vm'
+          })
+          .when('/population/', {
+            templateUrl: '/population/population.view.html',
+            controller: 'populationCtrl',
+            controllerAs: 'vm'
+          })
           .otherwise({redirectTo: '/'});
           
           
