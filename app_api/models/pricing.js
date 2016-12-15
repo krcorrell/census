@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var HouseSchema = new mongoose.Schema({
+    city: String,
     lowend: Number,
     midlevel: Number,
     highend: Number
@@ -9,6 +10,7 @@ var HouseSchema = new mongoose.Schema({
 mongoose.model('HousePrices', HouseSchema, 'HousePrices');
 
 var ApartmentSchema = new mongoose.Schema({
+    city: String,
     lowend: Number,
     midlevel: Number,
     highend: Number
@@ -17,6 +19,7 @@ var ApartmentSchema = new mongoose.Schema({
 mongoose.model('AparmentPrices', ApartmentSchema, 'AparmentPrices');
 
 var DuplexSchema = new mongoose.Schema({
+    city: String,
     lowend: Number,
     midlevel: Number,
     highend: Number

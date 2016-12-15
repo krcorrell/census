@@ -1,0 +1,51 @@
+var HouseSchema = new mongoose.Schema({
+    city: String,
+    lowend: Number,
+    midlevel: Number,
+    highend: Number
+});
+
+db.HousePrices.insert(
+    [
+        { city: "Amarillo", lowend: 50000, midlevel: 105000, highend: 250000 },
+        { city: "Dallas", lowend: 235000, midlevel: 750000, highend: 1000000 },
+        { city: "Denton", lowend: 65000, midlevel: 150000, highend: 300000 },
+        { city: "Lubbock", lowend: 140000, midlevel: 220000, highend: 450000 },
+        { city: "Abilene", lowend: 75000, midlevel: 185000, highend: 590000 },
+    ]
+)
+
+var ApartmentSchema = new mongoose.Schema({
+    city: String,
+    lowend: Number,
+    midlevel: Number,
+    highend: Number
+});
+
+db.ApartmentPrices.insert(
+    [
+        { city: "Amarillo", lowend: 340, midlevel: 560, highend: 792 },
+        { city: "Dallas", lowend: 560, midlevel: 880, highend: 1590 },
+        { city: "Denton", lowend: 535, midlevel: 706, highend: 1025 },
+        { city: "Lubbock", lowend: 632, midlevel: 870, highend: 1064 },
+        { city: "Abilene", lowend: 539, midlevel: 820, highend: 1026 },
+    ]
+)
+
+
+var DuplexSchema = new mongoose.Schema({
+    city: String,
+    lowend: Number,
+    midlevel: Number,
+    highend: Number
+});
+
+db.DuplexPrices.insert(
+    [
+        { city: "Amarillo", lowend: 65000, midlevel: 100000, highend: 180000 },
+        { city: "Dallas", lowend: 230000, midlevel: 500000, highend: 800000 },
+        { city: "Denton", lowend: 25000, midlevel: 60000, highend: 80000 },
+        { city: "Lubbock", lowend: 625, midlevel: 850, highend: 1100 },
+        { city: "Abilene", lowend: 595, midlevel: 795, highend: 1050 },
+    ]
+)
