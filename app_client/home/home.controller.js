@@ -11,7 +11,7 @@
         var vm = this;
         console.log(window.location);
         
-        vm.content = "Population Data";
+        vm.content = "Real Estate Data";
         
         vm.selectedState = "";
         vm.selectedCounty = "";
