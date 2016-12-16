@@ -12,9 +12,9 @@ router.get('/HousePrices/:locations', ctrlPricing.HousePricesReadOne);
 router.get('/HousePrices', ctrlPricing.HousePricesReadAll);
 
 /* Aparment Prices */
-router.get('/ApartmentPrices/:location', ctrlPricing.ApartmentPricesReadOne);
+router.get('/ApartmentPrices/:locations', ctrlPricing.ApartmentPricesReadOne);
 
 /* Duplex Prices */
-router.get('/DuplexPrices/:location', ctrlPricing.DuplexPricesReadOne);
+router.get('/DuplexPrices/:locations', ctrlPricing.DuplexPricesReadOne);
 
 module.exports = router;
