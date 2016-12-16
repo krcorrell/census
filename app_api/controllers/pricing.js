@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
-var HousePrices = mongoose('HousePrices');
-var AparmentPrices = mongoose('AparmentPrices');
-var DuplexPrices = mongoose('DuplexPrices');
+var HousePrices = mongoose.model('HousePrices');
+var AparmentPrices = mongoose.model('AparmentPrices');
+var DuplexPrices = mongoose.model('DuplexPrices');
 
 var sendJSONresponse = function(res, status, content) {
     res.status(status);
