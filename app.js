@@ -56,12 +56,6 @@ app.use(function(err, req, res, next){
   });
 });
 
-let server = require('http').Server(app);
 
-var port = process.env.PORT || 8000
-
-server.listen(port, function() {
-    console.log("App is running on port " + port);
-});
 
 module.exports = app;
