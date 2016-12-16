@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var HousePrices = mongoose.model('HousePrices');
-var AparmentPrices = mongoose.model('AparmentPrices');
+var ApartmentPrices = mongoose.model('AparmentPrices');
 var DuplexPrices = mongoose.model('DuplexPrices');
 
 var sendJSONresponse = function(res, status, content) {
@@ -57,7 +57,7 @@ module.exports.HousePricesReadOne = function(req, res) {
 module.exports.ApartmentPricesReadOne = function(req, res) {
     console.log('Finding Climb Data Record', req.params);
     if (req.params && req.params.weight) {
-        AparmentPrices
+        ApartmentPrices
             .find({
                 locations: req.params.locations,
             })

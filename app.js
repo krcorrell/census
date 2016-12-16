@@ -5,8 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./app_api/routes/index');
+require('./app_api/models/db');
 
+var routes = require('./app_api/routes/index');
 
 var app = express();
 
