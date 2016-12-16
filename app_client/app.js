@@ -1,8 +1,7 @@
 (function (){
     
-    angular.module('censusApp', ['ngRoute', 'ngSanitize', 'ui.bootstrap']);
-    
-    function config ($routeProvider, $locationProvider){
+    angular.module('censusApp', ['ngRoute']);
+    function config ($routeProvider){
         
         console.log("TEST");
         
@@ -10,6 +9,11 @@
           .when('/', {
             templateUrl: '/home/home.view.html',
             controller: 'homeCtrl',
+            controllerAs: 'vm'
+          })
+          .when('/population/', {
+            templateUrl: '/population/population.view.html',
+            controller: 'populationCtrl',
             controllerAs: 'vm'
           })
           .when('/apartment/', {
@@ -27,11 +31,7 @@
             controller: 'houseCtrl',
             controllerAs: 'vm'
           })
-          .when('/population/', {
-            templateUrl: '/population/population.view.html',
-            controller: 'populationCtrl',
-            controllerAs: 'vm'
-          })
+          
           .otherwise({redirectTo: '/'});
           
           

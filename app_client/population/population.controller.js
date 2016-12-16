@@ -1,47 +1,84 @@
 (function() {
-    
+
     angular
         .module('censusApp')
         .controller('populationCtrl', populationCtrl);
-        
-    populationCtrl.$inject = ['$scope', 'censusBureau', 'SelectedData'];
-    
-    function populationCtrl($scope, censusBureau, SelectedData) {
+
+    populationCtrl.$inject = ['$scope', 'SelectedData', 'CensusBureau'];
+
+    function populationCtrl($scope, SelectedData, CensusBureau) {
+        // Nasty IE9 redirect hack (not recommended)
+        /*
+        if (window.location.pathname !== '/') {
+          window.location.href = '/#' + window.location.pathname;
+        }*/
         var vm = this;
         console.log(window.location);
-        
-        vm.content = "Population Information";
-        
+
+        vm.content = "Census";
+
         vm.selectedState = "";
         vm.selectedCounty = "";
         vm.selectedCity = "";
-        
-        if(SelectedData.selectedState !== null){
+
+        //check selected Departure
+        if (SelectedData.selectedState !== null) {
             vm.selectedState = SelectedData.selectedState;
         }
         
-        if(SelectedData.selectedCounty !== null){
+        //check selected Arrival
+        if (SelectedData.selectedCounty !== null) {
             vm.selectedCounty = SelectedData.selectedCounty;
         }
-        
-        if(SelectedData.selectedCity !== null){
+
+        //check selected weight
+        if (SelectedData.selectedCity !== null) {
             vm.selectedCity = SelectedData.selectedCity;
         }
-        
-        vm.getCensus = function() {
+
+        vm.getState = function() {
             
-            censusBureau.getCensus(vm.selectedCity.locations)
+                   
+
+            CensusBureau.getState()
                 .success(function(data) {
-                    vm.getCensus = data[0];
-                    console.log(vm.getCensus);
+                    vm.selectedState = data;
+                    console.log(vm.selectedState);
                 })
-                .error(function(e){
+                .error(function(e) {
                     console.log(e);
                 });
         }
         
-        console.log("IN POPULATION BY LOCATION: " + vm.selectedCity.locations);
-        vm.getCensus();
+        vm.getCounty = function() {
+            
+            CensusBureau.getCounty()
+                .success(function(data) {
+                    vm.selectedCounty = data;
+                    console.log(vm.selectedCounty);
+                })
+                .error(function(e) {
+                    console.log(e);
+                });
+        }
+        
+        vm.getCity = function() {
+            
+            CensusBureau.getCity()
+                .success(function(data) {
+                    vm.selectedCity = data;
+                    console.log(vm.selectedCity);
+                })
+                .error(function(e) {
+                    console.log(e);
+                });
+        }
+        
+        //call services
+        vm.getState();
+        vm.getCounty();
+        vm.getCity();
+
     }
-    
+
 })();
